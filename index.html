@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub Digital Premium | Identidade Profissional para Psicanálise</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a3d62;
+            --secondary: #1e90ff;
+            --accent: #ffd700;
+            --whatsapp: #25d366;
+            --glass: rgba(255, 255, 255, 0.12);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #333;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        /* --- SEÇÃO HERO --- */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+        }
+
+        .container-anuncio {
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .selo {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: clamp(32px, 6vw, 56px);
+            margin: 0;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        h3 {
+            font-weight: 300;
+            font-size: clamp(18px, 3vw, 24px);
+            opacity: 0.9;
+            margin: 20px 0 50px;
+        }
+
+        /* --- CATEGORIAS DO CATÁLOGO --- */
+        .categoria-titulo {
+            text-align: left;
+            margin: 60px 0 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+            color: var(--primary);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+        }
+
+        .grid-beneficios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            text-align: left;
+            margin-bottom: 50px;
+        }
+
+        .card-beneficio {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s ease;
+            cursor: default;
+        }
+
+        .card-beneficio:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.18);
+            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-beneficio strong {
+            color: var(--accent);
+            font-size: 19px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .card-beneficio p {
+            margin: 0;
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
+        .bonus-box {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px dashed var(--accent);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+
+        .entrega-veloz {
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .preco-box {
+            margin: 20px 0 40px;
+        }
+
+        .parcelamento {
+            font-size: 24px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .preco {
+            font-size: clamp(50px, 8vw, 72px);
+            font-weight: 900;
+            line-height: 1;
+            color: #fff;
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: white;
+            padding: 22px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            max-width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .btn-demo {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: 0.3s;
+        }
+
+        .btn-demo:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--whatsapp);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            z-index: 1000;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-float:hover {
+            transform: scale(1.1);
+        }
+
+        .catalogo-section {
+            padding: 100px 20px;
+            background-color: #f8fafc;
+            text-align: center;
+        }
+
+        .pdf-view {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pdf-page {
+            background: white;
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            margin-bottom: 40px;
+        }
+
+        .pdf-page img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .modelo-info {
+            text-align: left;
+            padding: 0 10px;
+        }
+
+        .label-tecnica {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+
+        .label-desc {
+            font-size: 15px;
+            color: #64748b;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .link-modelo {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .custom-box {
+            margin-top: 60px;
+            padding: 40px;
+            background: #fff;
+            border-radius: 30px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .custom-box h4 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .custom-box p {
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        footer {
+            padding: 80px 20px;
+            background: #f1f5f9;
+            text-align: center;
+            font-size: 11px;
+            color: #94a3b8;
+        }
+
+        .img-panfleto-bonus {
+            max-width: 320px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 215, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .img-panfleto-bonus:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .urgencia-etica {
+            font-size: 15px;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            font-weight: 300;
+            line-height: 1.4;
+            color: #fff;
+        }
+
+        .urgencia-etica strong {
+            color: var(--accent);
+        }
+
+        .tag-lancamento {
+            background: rgba(255, 215, 0, 0.15);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero-section">
+        <div class="container-anuncio">
+            <div class="selo">Solução Profissional de Lançamento</div>
+            <h1>Hub Digital Premium</h1>
+            <h3>De psicanalista para psicanalistas. A sua presença clínica com autoridade, ética e tecnologia de ponta.</h3>
+
+            <div class="grid-beneficios">
+                <div class="card-beneficio">
+                    <strong><i class="fas fa-magic"></i> Glassmorphism</strong>
+                    <p>Interface sofisticada com efeitos translúcidos que transmitem transparência e modernidade.</p>
+                </div>
+                <div class="card-beneficio">
+                    <strong><i class="fas fa-server"></i> Sem Mensalidades</strong>
+                    <p>Hospedagem inclusa em infraestrutura global com custo zero de manutenção para o profissional.</p>
+                </div>
+                <div class="card-beneficio">
+                    <strong><i class="fas fa-copy"></i> Copia E-mail</strong>
+                    <p>Recurso inteligente para facilitar a recepção de trabalhos acadêmicos e anexos sem erros.</p>
+                </div>
+                <div class="card-beneficio">
+                    <strong><i class="fas fa-fingerprint"></i> Identidade</strong>
+                    <p>Cuidado técnico desde o ícone da aba (Favicon) até à fluidez absoluta no mobile.</p>
+                </div>
+                <div class="card-beneficio">
+                    <strong><i class="fas fa-mobile-alt"></i> Responsivo</strong>
+                    <p>Navegação perfeita adaptada para smartphones, tablets e computadores.</p>
+                </div>
+                <div class="card-beneficio">
+                    <strong><i class="fas fa-balance-scale"></i> Ética</strong>
+                    <p>Estrutura pensada exclusivamente para a prática clínica e o respeito ao setting digital.</p>
+                </div>
+            </div>
+
+            <div class="bonus-box">
+                <strong>🎁 BÔNUS: HUB FÍSICO (QR CODE)</strong>
+                <p>Receba um arquivo PDF configurado para impressão imediata. Conecte seu consultório ao digital.</p>
+                <img src="panfleto_site.png" alt="Amostra do Hub Digital e Panfleto" class="img-panfleto-bonus">
+            </div>
+
+            <div class="entrega-veloz">
+                <i class="fas fa-bolt"></i> Produção ágil em até 72h após reserva de vaga
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <a href="https://rafaelpaixaopsi.netlify.app/" target="_blank" class="btn-demo">
+                    <i class="fas fa-eye"></i> Ver Hub em funcionamento (Demo)
+                </a>
+            </div>
+
+            <div class="preco-box">
+                <div class="tag-lancamento">
+                    <span style="color: var(--accent); font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">
+                        ⚠️ Oferta de Lançamento: R$ 150,00 para os 10 primeiros
+                    </span>
+                </div>
+                <div class="urgencia-etica">
+                    Trabalho artesanal e personalizado. <br>
+                    <strong>Consulte disponibilidade de agenda para início imediato.</strong>
+                </div>
+                <div class="parcelamento">2x de R$ 82,52 ou</div>
+                <div class="preco">R$ 150,00</div>
+                <div style="margin-top:15px; opacity:0.8;">Investimento Único • Sem taxas recorrentes</div> <br>
+                <a href="https://wa.me/5527988462360?text=Olá!%20Quero%20aproveitar%20o%20valor%20de%20lançamento%20de%20R$150%20para%20o%20Hub%20Digital%20Premium." class="btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> CONSULTAR DISPONIBILIDADE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalogo-section" id="catalogo">
+        <h2>Catálogo de Versões</h2>
+
+        <div class="pdf-view">
+
+            <div class="categoria-titulo">Linha Autoridade & Rigor</div>
+
+            <div class="pdf-page">
+                <img src="azul.PNG" alt="Modelo 01">
+                <div class="modelo-info">
+                    <span class="label-tecnica">01. Azul Profundo – Autoridade Clínica</span>
+                    <span class="label-desc">Presença sóbria e institucional, ideal para destacar especialidades técnicas e converter o primeiro contato em aliança terapêutica.</span>
+                    <a href="https://rafaelpaixaopsi.netlify.app/" target="_blank" class="link-modelo">
+                        <i class="fas fa-external-link-alt"></i> Visualizar este modelo na prática
+                    </a>
+                </div>
+            </div>
+
+            <div class="pdf-page">
+                <img src="branco.PNG" alt="Modelo 02">
+                <div class="modelo-info">
+                    <span class="label-tecnica">02. Branco Clínico – Investigação e Rigor</span>
+                    <span class="label-desc">Layout purista focado na singularidade do sujeito e na decifração do inconsciente através da ética do desejo.</span>
+                </div>
+            </div>
+
+            <div class="categoria-titulo">Linha Acolhimento & Leveza</div>
+
+            <div class="pdf-page">
+                <img src="bege.PNG" alt="Modelo 03">
+                <div class="modelo-info">
+                    <span class="label-tecnica">03. Bege Minimalista – Acolhimento e Escuta</span>
+                    <span class="label-desc">Uma estética suave que prioriza o vínculo humano, focada no desenvolvimento pessoal e na hospitalidade da clínica.</span>
+                </div>
+            </div>
+
+            <div class="pdf-page">
+                <img src="cinza.PNG" alt="Modelo 04">
+                <div class="modelo-info">
+                    <span class="label-tecnica">04. Serenidade Minimalista – Design Orgânico</span>
+                    <span class="label-desc">Estética Clean, focada em reduzir a ansiedade do paciente através de um design fluido que prioriza a clareza mental.</span>
+                </div>
+            </div>
+
+            <div class="pdf-page">
+                <img src="verde.PNG" alt="Modelo 05">
+                <div class="modelo-info">
+                    <span class="label-tecnica">05. Verde Equilíbrio – Saúde Mental</span>
+                    <span class="label-desc">Espaço de fala livre e acolhedora, desenhado para transmitir estabilidade e facilitar o acesso ao cuidado emocional.</span>
+                </div>
+            </div>
+
+            <div class="categoria-titulo">Linha Vitalidade & Self</div>
+
+            <div class="pdf-page">
+                <img src="amarelo.PNG" alt="Modelo 06">
+                <div class="modelo-info">
+                    <span class="label-tecnica">06. Essência Dourada – Vitalidade e Self</span>
+                    <span class="label-desc">Design vibrante focado na superação de bloqueios e na busca por uma vida com mais sentido e clareza.</span>
+                </div>
+            </div>
+
+            <div class="custom-box">
+                <h4>Não achou o que procurava?</h4>
+                <p>Cada escuta é única, e sua presença digital também pode ser. <br> 
+                <strong>Podemos personalizar cores e elementos para refletir sua identidade clínica.</strong></p>
+                <a href="https://wa.me/5527988462360?text=Olá!%20Vi%20os%20modelos,%20mas%20gostaria%20de%20algo%20personalizado." class="btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> SOLICITAR PERSONALIZAÇÃO
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="nota-informativa">
+            * Nota de Transparência: A hospedagem utiliza tecnologia de nuvem global (Netlify). No modelo para profissionais liberais, o custo de manutenção da plataforma é zero. O cliente recebe a posse integral dos ficheiros (HTML/CSS).
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5527988462360?text=Olá!%20Gostaria%20de%20encomendar%20o%20Hub%20Digital%20Premium." class="btn-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+
+</html>
